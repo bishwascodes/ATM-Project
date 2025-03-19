@@ -10,7 +10,7 @@ public class BankAccount
     }
 
 
-    public static bool hasSufficientFunds(double amount)
+    public bool hasSufficientFunds(double amount)
     {
         if (amount <= getBalance())
         {
@@ -22,7 +22,7 @@ public class BankAccount
         }
     }
 
-    public static bool Withdraw(double amount)
+    public bool Withdraw(double amount)
     {
         if (hasSufficientFunds(amount) == true)
         {
@@ -34,8 +34,8 @@ public class BankAccount
         }
     }
 
-    public static double getBalance()
+    public double getBalance()
     {
-        return 1;
+        return Balance;
     }
 }
