@@ -14,14 +14,10 @@ public class BankAccount
     {
         if (amount <= getBalance())
         {
-            // Console.WriteLine is removable if need be
-            Console.WriteLine("Your account has sufficient funds for this transaction.");
             return true;
         }
         else
         {
-            // Console.WriteLine is removable if need be
-            Console.WriteLine("You do not have sufficient funds to make this transaction.");
             return false;
         }
     }
@@ -30,14 +26,10 @@ public class BankAccount
     {
         if (hasSufficientFunds(amount) == true)
         {
-            // Console.WriteLine is removable if need be
-            Console.WriteLine("Withdrawl successful.");
             return true;
         }
         else
         {
-            // Console.WriteLine is removable if need be
-            Console.WriteLine("Withdraw unsuccessful. Not sufficient funds.");
             return false;
         }
     }
