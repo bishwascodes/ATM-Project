@@ -34,7 +34,7 @@ public class BankServer
         }
         return false;
     }
-
+  
     public bool processTransaction(string cardNumber, double amount)
     {
         if (validCards[cardNumber].account.hasSufficientFunds(amount))
@@ -54,4 +54,3 @@ public class BankServer
         return -1;
     }
 }
-
