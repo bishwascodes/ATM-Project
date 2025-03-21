@@ -34,19 +34,23 @@ public class BankServer
         }
         return false;
     }
-
+  
     public bool processTransaction(string cardNumber, double amount)
     {
         if (validCards[cardNumber].account.hasSufficientFunds(amount))
         {
-
+            bool transactionSuccessful = validCards[cardNumber].account.Withdraw(amount);
+            return transactionSuccessful;
         }
+        return false;
     }
 
     public double checkBalance(string cardNumber)
     {
-        throw new NotImplementedException();
-        int x = 0;
+        if (validCards.ContainsKey(cardNumber))
+        {
+            return validCards[cardNumber].account.getBalance();
+        }
+        return -1;
     }
-
 }
