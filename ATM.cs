@@ -28,7 +28,7 @@ public class ATM
         currentAction = ATMAction.InsertCard;
     }
 
-    public void InsertCard(string cardNumber)
+    public void insertCard(string cardNumber)
     {
         if (bankServer.VerifyCard(cardNumber))
         {
@@ -36,16 +36,16 @@ public class ATM
             currentCardNumber = cardNumber;
             Console.WriteLine("Card inserted successfully.");
 
-            currentAction = GetNextAction();
+            currentAction = getNextAction();
         }
         else
         {
             Console.WriteLine("Invalid card number.");
-            currentAction = GetNextAction();
+            currentAction = getNextAction();
         }
     }
 
-    public void EnterPIN()
+    public void enterPIN()
     {
         if (!cardInserted)
         {
@@ -61,7 +61,7 @@ public class ATM
                 pinValidated = true;
                 Console.WriteLine("PIN validated successfully.");
                 // Automatically transition to the next action
-                currentAction = GetNextAction();
+                currentAction = getNextAction();
             }
             else
             {
@@ -74,7 +74,7 @@ public class ATM
         }
     }
 
-    public void RequestAmount()
+    public void requestAmount()
     {
         if (!pinValidated)
         {
@@ -101,10 +101,10 @@ public class ATM
         }
 
         // Automatically transition to the next action
-        currentAction = GetNextAction();
+        currentAction = getNextAction();
     }
 
-    public void EjectCard()
+    public void ejectCard()
     {
         if (cardInserted)
         {
@@ -122,7 +122,7 @@ public class ATM
         }
     }
 
-    public void CheckBalance()
+    public void checkBalance()
     {
         if (!pinValidated)
         {
@@ -134,10 +134,10 @@ public class ATM
         Console.WriteLine($"Your balance is: {balance:C}");
 
         // Automatically transition to the next action
-        currentAction = GetNextAction();
+        currentAction = getNextAction();
     }
 
-    public ATMAction GetNextAction()
+    public ATMAction getNextAction()
     {
         if (!cardInserted)
         {
