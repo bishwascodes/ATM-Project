@@ -26,6 +26,7 @@ public class BankAccount
     {
         if (hasSufficientFunds(amount) == true)
         {
+            Balance = Balance - amount;
             return true;
         }
         else
