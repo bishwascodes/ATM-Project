@@ -1,7 +1,10 @@
 # ATM-Project
-Samuel  -BankServer
-Bishwas -UI
-Landon  -BankServer
 Himni   -ATM 
-Tyson   -BankAcount
 Johan   -ATM
+
+Samuel  -BankServer
+Landon  -BankServer
+
+Tyson   -BankAcount
+
+Bishwas -UI
