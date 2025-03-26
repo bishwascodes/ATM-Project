@@ -30,7 +30,7 @@ public class ATM
 
     public void insertCard(string cardNumber)
     {
-        if (bankServer.VerifyCard(cardNumber))
+        if (bankServer.verifyCard(cardNumber))
         {
             cardInserted = true;
             currentCardNumber = cardNumber;
@@ -56,7 +56,7 @@ public class ATM
         Console.Write("Enter PIN: ");
         if (int.TryParse(Console.ReadLine(), out int pin))
         {
-            if (bankServer.VerifyPIN(currentCardNumber, pin))
+            if (bankServer.verifyPIN(currentCardNumber, pin))
             {
                 pinValidated = true;
                 Console.WriteLine("PIN validated successfully.");
@@ -85,7 +85,7 @@ public class ATM
         Console.Write("Enter amount to withdraw: ");
         if (double.TryParse(Console.ReadLine(), out double amount))
         {
-            if (bankServer.ProcessTransaction(currentCardNumber, amount))
+            if (bankServer.processTransaction(currentCardNumber, amount))
             {
                 transactionCompleted = true;
                 Console.WriteLine("Withdrawal successful.");
@@ -130,7 +130,7 @@ public class ATM
             return;
         }
 
-        double balance = bankServer.CheckBalance(currentCardNumber);
+        double balance = bankServer.checkBalance(currentCardNumber);
         Console.WriteLine($"Your balance is: {balance:C}");
 
         // Automatically transition to the next action

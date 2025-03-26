@@ -22,7 +22,7 @@ public class BankAccount
         }
     }
 
-    public bool Withdraw(double amount)
+    public bool withdraw(double amount)
     {
         if (hasSufficientFunds(amount) == true)
         {
