@@ -11,7 +11,7 @@ public class BankServer
         validCards = initialCards;
     }
 
-    public bool verifyCard(string cardNumber)
+    public bool VerifyCard(string cardNumber)
     {
         if (!validCards.ContainsKey(cardNumber))
         {
@@ -23,9 +23,9 @@ public class BankServer
         }
     }
 
-    public bool verifyPIN(string cardNumber, int pin)
+    public bool VerifyPIN(string cardNumber, int pin)
     {
-        if (verifyCard(cardNumber))
+        if (VerifyCard(cardNumber))
         {
             if (validCards[cardNumber].pin == pin)
             {
@@ -35,7 +35,7 @@ public class BankServer
         return false;
     }
   
-    public bool processTransaction(string cardNumber, double amount)
+    public bool ProcessTransaction(string cardNumber, double amount)
     {
         if (validCards[cardNumber].account.hasSufficientFunds(amount))
         {
@@ -45,7 +45,7 @@ public class BankServer
         return false;
     }
 
-    public double checkBalance(string cardNumber)
+    public double CheckBalance(string cardNumber)
     {
         if (validCards.ContainsKey(cardNumber))
         {
