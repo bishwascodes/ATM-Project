@@ -1,4 +1,4 @@
-namespace ATM;
+namespace ATM_NS;
 
 public class BankAccount
 {

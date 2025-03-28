@@ -1,4 +1,4 @@
-namespace ATM;
+namespace ATM_NS;
 
 
 public enum ATMAction
@@ -13,10 +13,10 @@ public enum ATMAction
 
 public class ATM
 {
-    private ATMAction currentAction = ATMAction.InsertCard;
+    public ATMAction currentAction = ATMAction.InsertCard;
     private bool cardInserted = false;
     private bool pinValidated = false;
-    private bool transactionCompleted = false; 
+    private bool transactionCompleted = false;
 
     private bool CashDispensed = false;
     private BankServer bankServer;
@@ -99,7 +99,7 @@ public class ATM
         {
             Console.WriteLine("Invalid amount.");
         }
-
+        Thread.Sleep(3000);
         // Automatically transition to the next action
         currentAction = getNextAction();
     }
@@ -134,6 +134,15 @@ public class ATM
         Console.WriteLine($"Your balance is: {balance:C}");
 
         // Automatically transition to the next action
+        currentAction = getNextAction();
+    }
+
+    public void dispenseCash()
+    {
+        CashDispensed = true;
+        Console.WriteLine("Please Collect your cash");
+        Thread.Sleep(3000);
+
         currentAction = getNextAction();
     }
 
